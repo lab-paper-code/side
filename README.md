@@ -8,7 +8,7 @@ TS-trie
 * [Building from source](#Building-from-source)
     * [Build TS-trie indexing server](#build-ts-trie-indexing-server)
     * [Build front application server](#Buil-front-application-server)
-* [Main features](#Main-features)
+* [Main Features](#Main-Features)
     * [Point query](#Point-query)
     * [Trajectory query](#trajectory-query)
 * [How to Use](#How-to-Use)
@@ -87,7 +87,7 @@ Then compile the code below.
 Now you can access the experimental web page.
 
 
-## Main features
+## Main Features
 
 ### Point query
  * #### Spatiotemporal range query
