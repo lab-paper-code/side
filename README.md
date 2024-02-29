@@ -148,7 +148,7 @@ Now you can access the experimental web page.
     If you've incorrectly set the rectangle, select the trash can icon, click on the rectangles you want to delete, and press the save button next to the icon to remove them.
 
     > **Warning**
-    > If you drag too much on the map, it could an occur error on the server.
+    > If you drag too much on the map, it could occur an error on the server.
 
 
 5. Press the "Get Coordinate range" button to confirm the input of coordinates
