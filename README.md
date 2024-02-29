@@ -1,5 +1,6 @@
 TS-trie
 =============
+[VLDB'24] TS-Trie: A Temporal-Prefix based Indexing Scheme for Fast Spatiotemporal IoT Data Retrieval
 * [What is TS-trie](#What-is-TS-trie)
 * [Settings](#Settings)
 * [Building from source](#Building-from-source)
