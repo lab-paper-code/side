@@ -137,7 +137,7 @@ Now you can access the experimental web page.
 
 ### Experiment process
 
-1. Access the web page through  `server_IP:8080`.
+1. Access the web page through  `your_server_IP:8080`.
 
 2. Place the cursor over the query format applied during compilation (__point__ or __trajectory__) at the top right corner of the webpage, and then choose a specific [query method.](#Main-features)
 
