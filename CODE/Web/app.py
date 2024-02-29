@@ -127,8 +127,8 @@ def result_range():
 
 
     # Visualization
-    # index_type = "stc" if query_data['trie_type'] == 'ST' else 'tsc'
-    # utility.S2CellMapJS(index_type, index_key, query_data)
+    index_type = "stc" if query_data['trie_type'] == 'ST' else 'tsc'
+    utility.S2CellMapJS(index_type, index_key, query_data)
 
 
     return render_template(
@@ -238,8 +238,6 @@ def result_traj_similarity():
     elapsed_time = round(end_time - start_time, 3)
     print("total elapesd time : {}\n" .format(elapsed_time))
 
-    # Visualization
-    # utility.S2CellMapJS(None, None, query_data, 'Trajectory', res)
     
     return render_template(
         'result_traj_similarity.html',
