@@ -48,7 +48,7 @@ It involves encoding a one-dimensional indexing key by using the time informatio
 
 ### Build TS-trie indexing server
 
- Before initiating the compilation process, you need to choose the desired dataset and index format in the location marked with *** in `config.txt` located at `index/TS-trie/`.
+ Before initiating the compilation process, you need to choose the desired dataset and index format in the location marked with *** in `config.txt` located at `CODE/index/`.
 
     DB_name = SIDE-***
     Index_name = ***
@@ -65,7 +65,7 @@ For example, if you want to check the Chicago dataset with point query, modify t
 
 
 
-Move to `SIDE/CODE/index` and then compile the code below.
+Move to `CODE/index/TS-trie` and then compile the code below.
 
 ```
 sudo g++ --std=c++14 BinaryTrie.h iot_time.h iot_time.cpp cover.h cover.cpp iot_func.h iot_func.cpp ConfigParser.h ConfigParser.cpp main.cpp -o Index $(pkg-config --cflags --libs libmongocxx) -ls2 -lboost_system -lcrypto -lssl -lcpprest -O2 -Wall -lm -m64 -lpthread
@@ -78,9 +78,9 @@ After compiling, execute the generated `Index` file. This will start the server.
 
 ### Build front application server
 
-Open a new terminal and move to the ST-Trie or TS-Trie directory under `SIDE/CODE/index`.
+Open a new terminal and move to `CODE/Web`.
 
-Then compile the code below. 
+Then execute the code below. 
 
     python3 app.py
 
