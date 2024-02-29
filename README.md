@@ -14,7 +14,7 @@ TS-trie
 * [How to Use](#How-to-Use)
     * [Experiment input form](#experiment-input-form)
     * [Experiment process](#experiment-process)
-* [Example Results](#Example-Results)
+* [Sample Results](#Sample-Results)
     * [Point query](#point-query-1)
     * [Trajectory query](#trajectory-query-1)
 
@@ -160,7 +160,7 @@ Now you can access the experimental web page.
 6. Press the search button to review the query results.
 
 
-## Example Results
+## Sample Results
 ### Point query
  * #### Spatiotemporal range query
 
