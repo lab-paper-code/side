@@ -119,7 +119,7 @@ Now you can access the experimental web page.
 ## How to Use
 
 ### Experiment input form
- - a time range with __two dates__, represented in the ISO 8601 standard format as `YYYY-MM-DD:hh:mm:ss`
+ - a time range with __two dates__, represented in the ISO 8601 standard format as `YYYY-MM-DD:hh:mm`
  - a rectangular spatial range with __two spatial points__, indicating coordinates in terms of __latitude__ and __longitude__.
 
     example:
@@ -131,11 +131,13 @@ Now you can access the experimental web page.
 
 ### Experiment process
 
-1. Place the cursor over the query format applied during compilation (__point__ or __trajectory__) at the top right corner of the webpage, and then choose a specific [query method.](#Main-features)
+1. Access the web page through  `server_IP:8080`.
 
-2. Choose the start and end dates under the time condition and switch the search type from ST to __TS__(ST means STC-index query and TS means TSC-index query).
+2. Place the cursor over the query format applied during compilation (__point__ or __trajectory__) at the top right corner of the webpage, and then choose a specific [query method.](#Main-features)
 
-3. Click on the rectangle shape on the map, then drag to set the spatial range as desired.
+3. Choose the start and end dates under the time condition and switch the search type from ST to __TS__(ST means STC-index query and TS means TSC-index query).
+
+4. Click on the rectangle shape on the map, then drag to set the spatial range as desired.
 
     If you've incorrectly set the rectangle, select the trash can icon, click on the rectangles you want to delete, and press the save button next to the icon to remove them.
 
@@ -143,7 +145,7 @@ Now you can access the experimental web page.
     > If you drag too much on the map, it could an occur error on the server.
 
 
-4. press the "Get Coordinate range" button to confirm the input of coordinates, then press the search button to review the query results.
+5. press the "Get Coordinate range" button to confirm the input of coordinates, then press the search button to review the query results.
 
 
 ## Result Analysis
