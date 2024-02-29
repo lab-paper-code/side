@@ -37,7 +37,7 @@ It involves encoding a one-dimensional indexing key by using the time informatio
 ## Building from source
 
 
-### Build TS-trie indexing server
+### 1. Build TS-trie indexing server
 
  Before initiating the compilation process, you need to choose the desired dataset and index format in the location marked with *** in `config.txt` located at `index/TS-trie/`.
 
@@ -67,7 +67,7 @@ After compiling, execute the generated `Index` file. This will start the server.
     ./Index
 
 
-### Build front application server
+### 2. Build front application server
 
 Open a new terminal and move to the ST-Trie or TS-Trie directory under `SIDE/CODE/index`.
 
@@ -78,7 +78,46 @@ Then compile the code below.
 
 ## Main features
 
-### Point query
+### 1. Point query
+ * #### Spatiotemporal range query
+
+     - Find all spatiotemporal points satisfying the given spatiotemporal conditions.
+
+ * #### k-NN query
+
+     - Retrieve k items in order of proximity from the given x, y coordinates while satisfying the spatiotemporal conditions
+
+ * #### Top-k query
+
+     - Retrieve k items satisfying the given spatiotemporal conditions, selected from an arbitrary ordering criteria.
+     - In our experiments, we sorted in descending order based on latitude.
+
+
+### 2. Trajectory query
+ * ####  Spatiotemporal range query
+
+     - Find all trajectories to which points satisfying the given spatiotemporal conditions.
+
+ * ####  𝑘-Similarity query
+
+     - Identify a set of 𝑘 trajectories within a database that are most similar to a specific trajectory data
+
+
+
+## How to Use
+
+### input
+ - a time range with __two dates__, represented in the ISO 8601 standard format as `"YYYY-MM-DD:HH:MM:SS"`
+ - a rectangular spatial range with __two spatial points__, indicating coordinates in terms of __latitude__ and __longitude__.
+
+ example:
+ ```
+2013-07-01:09:00:00 ~ 2013-07-01:21:00:00
+
+(41.15255, -8.650274), (41.161985, -8.638086) #(latitude, longitude)
+ ```
+
+### 1. Point query
   #### 1) Spatiotemporal range query
 
   - Find all spatiotemporal points satisfying the given spatiotemporal conditions.
@@ -93,7 +132,7 @@ Then compile the code below.
   - In our experiments, we sorted in descending order based on latitude.
 
 
-### Trajectory query
+### 2. Trajectory query
  #### 1) Spatiotemporal range query
 
   - Find all trajectories to which points satisfying the given spatiotemporal conditions.
@@ -101,23 +140,6 @@ Then compile the code below.
  #### 2) 𝑘-Similarity query
 
   - Identify a set of 𝑘 trajectories within a database that are most similar to a specific trajectory data
-
-
-
-## How to Use
-
-#### input
- - a time range with __two dates__, represented in the ISO 8601 standard format as `"YYYY-MM-DD:HH:MM:SS"`
- - a rectangular spatial range with __two spatial points__, indicating coordinates in terms of __latitude__ and __longitude__.
-
- example:
- ```
-2013-07-01:09:00:00 ~ 2013-07-01:21:00:00
-
-(41.15255, -8.650274), (41.161985, -8.638086)
- ```
-
-
 
 ___First___, choose the start and end dates under the time condition and switch the search type from ST to TS(ST means STC-index query and TS means TSC-index query).
 
