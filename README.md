@@ -6,6 +6,7 @@ TS-trie
 * [Building from source](#Building-from-source)
 * [Main features](#Main-features)
 * [How to Use](#How-to-Use)
+* [Result Analysis](#Result-Analysis)
 
 ## What is TS-trie
 
@@ -87,11 +88,11 @@ Now you can access the experimental web page.
 
  * #### k-NN query
 
-     - Retrieve __k__ items in order of proximity from the given x, y coordinates while satisfying the spatiotemporal conditions
+     - Retrieve __k__ points in order of proximity from the given x, y coordinates while satisfying the spatiotemporal conditions
 
  * #### Top-k query
 
-     - Retrieve __k__ items satisfying the given spatiotemporal conditions, selected from an arbitrary ordering criteria.
+     - Retrieve __k__ points satisfying the given spatiotemporal conditions, selected from an arbitrary ordering criteria.
      - In our experiments, we sorted in descending order based on latitude.
 
 
@@ -107,7 +108,7 @@ Now you can access the experimental web page.
 
 ## How to Use
 
-### input
+#### Input form
  - a time range with __two dates__, represented in the ISO 8601 standard format as `"YYYY-MM-DD:HH:MM:SS"`
  - a rectangular spatial range with __two spatial points__, indicating coordinates in terms of __latitude__ and __longitude__.
 
@@ -119,11 +120,13 @@ Now you can access the experimental web page.
  ```
 
 
+First, place the cursor over the query format applied during compilation (__point__ or __trajectory__) at the top right corner of the webpage, and then choose a specific [query method.](#Main-features)
+
 > **Warning**
-> If you drag too much on the map, it could occur error on the server.
+> If you drag too much on the map, it could an occur error on the server.
 
 
-___First___, choose the start and end dates under the time condition and switch the search type from ST to TS(ST means STC-index query and TS means TSC-index query).
+___Second___, choose the start and end dates under the time condition and switch the search type from ST to TS(ST means STC-index query and TS means TSC-index query).
 
 
 ___Afterward___, click on the rectangle shape on the map, then drag to set the spatial range as desired.
@@ -133,3 +136,6 @@ If you've incorrectly set the rectangle, select the trash can icon, click on the
 
 
 ___Lastly___, press the "Get Coordinates" button to confirm the input of coordinates, then press the search button to review the query results.
+
+
+## Result Analysis
