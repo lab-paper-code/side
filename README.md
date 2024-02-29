@@ -135,7 +135,7 @@ Now you can access the experimental web page.
 
 2. Place the cursor over the query format applied during compilation (__point__ or __trajectory__) at the top right corner of the webpage, and then choose a specific [query method.](#Main-features)
 
-3. Choose the start and end dates under the time condition and switch the search type from ST to __TS__(ST means STC-index query and TS means TSC-index query).
+3. Choose the start and end dates under the time condition.
 
 4. Click on the rectangle shape on the map, then drag to set the spatial range as desired.
 
