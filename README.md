@@ -3,8 +3,14 @@ TS-trie
 [VLDB'24] TS-Trie: A Temporal-Prefix based Indexing Scheme for Fast Spatiotemporal IoT Data Retrieval
 * [What is TS-trie](#What-is-TS-trie)
 * [Settings](#Settings)
+    *  [Environments](#Environments)
+    *  [Utilized public datasets](#Utilized-public-datasets)
 * [Building from source](#Building-from-source)
+    * [Build TS-trie indexing server](#build-ts-trie-indexing-server)
+    * [Build front application server](#Buil-front-application-server)
 * [Main features](#Main-features)
+    * [Point query](#Point-query)
+    * [Trajectory query](#trajectory-query)
 * [How to Use](#How-to-Use)
 * [Result Analysis](#Result-Analysis)
 
@@ -38,7 +44,7 @@ It involves encoding a one-dimensional indexing key by using the time informatio
 ## Building from source
 
 
-### 1. Build TS-trie indexing server
+### Build TS-trie indexing server
 
  Before initiating the compilation process, you need to choose the desired dataset and index format in the location marked with *** in `config.txt` located at `index/TS-trie/`.
 
@@ -68,7 +74,7 @@ After compiling, execute the generated `Index` file. This will start the server.
     ./Index
 
 
-### 2. Build front application server
+### Build front application server
 
 Open a new terminal and move to the ST-Trie or TS-Trie directory under `SIDE/CODE/index`.
 
@@ -81,7 +87,7 @@ Now you can access the experimental web page.
 
 ## Main features
 
-### 1. Point query
+### Point query
  * #### Spatiotemporal range query
 
      - Find all spatiotemporal points satisfying the given spatiotemporal conditions.
@@ -96,7 +102,7 @@ Now you can access the experimental web page.
      - In our experiments, we sorted in descending order based on latitude.
 
 
-### 2. Trajectory query
+### Trajectory query
  * ####  Spatiotemporal range query
 
      - Find all trajectories to which points satisfying the given spatiotemporal conditions.
