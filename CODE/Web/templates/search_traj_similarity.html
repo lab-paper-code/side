@@ -1,0 +1,106 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+    .map_wrap {width: 100%;position: relative;}
+    .modes {position: absolute;top: 10px;left: 10px;z-index: 1;}
+    .getdata{position: absolute;top: 370px;left: 10px;z-index: 1;}
+    #map {width: 100%;height: 550px;}
+    #map {margin-top: 10px;}
+</style>
+<div style="display: none" id="db_name">{{ db_ }}</div>
+<div class="section padding_layout_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="full">
+                    <div class="main_heading text_align_center">
+                        <h2>Similarity Query</h2>
+                        <p class="large">Find K-similar trajectory within spatio-temporal range</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+            <div class="row about_blog">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div class="main_heading text_align_left">
+                            <form action="/result/trajectory/similarity" method="post">
+                              <br/>
+                                <div>
+                              <h1>Start Datetime&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End Datetime</h1>
+                              <input type="date" name="start_date">
+                              <select name="start_hour">
+                                <option value="0" style="width:100px;">hh</option>
+                                {% for t in range(24) %}
+                                <option value="{{t}}">{{t}}</option>
+                                {% endfor %}
+                              </select> ~
+                              <input type="date" name="end_date">
+                              <select name="end_hour">
+                                <option value="0" style="width:100px;">hh</option>
+                                {% for t in range(24) %}
+                                <option value="{{t}}">{{t}}</option>
+                                {% endfor %}
+                              </select>
+                                </div>
+                              <br /> 
+                              <br />
+                              
+                              <h1>Searching Area</h1><input type="text" id="points" name="points"></input>
+                              <input type="button" onclick="getPoints();" value="Get coordinate range">
+                              <br />
+                              <br />
+                              <h1>Target Trajectory Coordinates</h1> 
+                              <input type="text", id="querying_traj", name="querying_traj"></input>
+                              <br /><br />
+                              <h1>K / Distance Metrics</h1>
+                              <input type="text" id="k" name="k"></input>&nbsp;&nbsp;&nbsp;&nbsp;
+                              <select id="distanceMetrics" name="distanceMetrics">
+                                <option value="euclidean">Euclidean</option>
+                                <option value="dtw">DTW</option>
+                                <option value="lcss">LCSS</option>
+                              </select>
+                              <br />
+                              <br />
+                              <h1>Search Type</h1>
+                              <input type="text" id="type" name="type" value="RECTANGLE"></input>
+							  <br />
+                              <input type="text" id="trie_type" name="trie_type" value="TS"></input>
+                              <br />
+                              <br />
+                              <button type="submit" class="input-search-submit">Serach</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="full">
+                    <div class="main_heading text_align_center">
+                        <div id="map">
+                        <script type="text/javascript" src="{{ url_for('static', filename='search_map.js') }}"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-3">
+                <div class="side_bar">
+                    <div class="side_bar_blog">
+                        
+
+                        <h4>Input Format</h4>
+                        <ul>
+                            <li>DATE HOUR (YYYY-MM-DD HH)</li>
+                            <li>(ex) 2018-06-03 14</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+
+</div>
+
+{% endblock %}

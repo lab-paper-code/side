@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+    .map_wrap {width: 100%;position: relative;}
+    .modes {position: absolute;top: 10px;left: 10px;z-index: 1;}
+    .getdata{position: absolute;top: 370px;left: 10px;z-index: 1;}
+    #map {width: 100%;height: 550px;}
+    #map {margin-top: 10px;}
+
+</style>
+<div class="section padding_layout_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="full">
+                    <div class="main_heading text_align_center">
+                        <h2>Top-K Query Result</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+            <div class="row about_blog">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div class="main_heading text_align_left">
+                            <h3><a href="/">Back to Home</a></h3>
+                            {% if origin %}
+                            <h1>{{ origin|length }} rows received</h1>
+                            <h1>elapsed time : {{elapsed_time}}(s)</h1>
+                            <br/>
+                            <h1>Top {{query_data.k}} rows</h1>
+                            <table border="1">
+                                <thead>
+                                <tr>
+                                    <th>_id</th>
+                                    <th>TYPE</th>
+                                    <th>SENSOR_INFO</th>
+                                    {% if 'STC_ID' in res[i] %}
+                                        <th>'STC_ID'</th>
+                                    {% else %}
+                                        <th>'TSC_ID'</th>
+                                    {% endif %}
+                                    <th>PM10</th>
+                                </tr>
+                                </thead>
+                                {% for i in range(query_data.k) %}
+                                <TR>
+                                    <TD class="c1">{{res[i]._id}}</TD>
+                                    <TD class="c2">{{res[i].TYPE}}</TD>
+                                    <TD class="c3">{{res[i].Sensor_Info}}</TD>
+                                    {% if 'STC_ID' in res[i] %}
+                                        <TD class="c4">{{ res[i].STC_ID }}</TD>
+                                    {% else %}
+                                        <TD class="c4">{{ res[i].TSC_ID }}</TD>
+                                    {% endif %}
+                                </TR>
+                                {% endfor %}
+                            </table>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="full">
+                    <div class="main_heading text_align_center">
+                        <div id="map">
+                        <script type="text/javascript" src="{{ url_for('static', filename='result_map.js') }}"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+    </div>
+    </div>
+
+</div>
+
+{% endblock %}

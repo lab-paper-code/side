@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+    .map_wrap {width: 100%;position: relative;}
+    .modes {position: absolute;top: 10px;left: 10px;z-index: 1;}
+    .getdata{position: absolute;top: 370px;left: 10px;z-index: 1;}
+    #drawingMap, #map {width: 100%;height: 550px;}
+
+</style>
+<div class="section padding_layout_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="full">
+                    <div class="main_heading text_align_center">
+                        <h2>Spatio-Temporal Range Trajectory Query Result</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+            <div class="row about_blog">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div class="main_heading text_align_left">
+                            <h3><a href="/search/trajectory/range">Back to Home</a></h3>
+                            <h1>[Searching Trajectory Results]</h1>
+                            {% if res %}
+                                <h1>{{ res|length }} Trajectory data received</h1>
+                                <h1>elapsed time : {{elapsed_time}}(s)</h1>
+                                <br/>
+                                {% if res|length >= 10 %}
+                                <h1>10 rows example</h1>
+                                <table border="1">
+                                    <thead>
+                                    <tr>
+                                        <th>_id</th>
+                                        <th>Trajectory_ID</th>
+                                        {% if query_data.trie_type == 'TS' %}
+                                            <th>TSC_ID</th>
+                                        {% else %}
+                                            <th>STC_ID</th>
+                                        {% endif %}
+                                    </tr>
+                                    </thead>
+                                    {% for trajectory_id, elements in res.items() %}
+                                        {% if loop.index <= 10 %}
+                                            <tr>
+                                                <td class="c1">{{ elements['_id'] }}</td>
+                                                <td class="c2">{{ elements['Trajectory_ID'] }}</td>                                                
+                                            </tr>
+                                        {% endif %}                 
+                                    {% endfor %}
+                                </table>
+                                {% else %}
+                                <h1>{{ res|length }} rows example</h1>
+                                <table border="1">
+                                    <thead>
+                                    <tr>
+                                        <th>_id</th>
+                                        <th>Trajectory_ID</th>
+                                        {% if query_data.trie_type == 'TS' %}
+                                            <th>TSC_ID</th>
+                                        {% else %}
+                                            <th>STC_ID</th>
+                                        {% endif %}
+                                    </tr>
+                                    </thead>
+                                    {% for trajectory_id, elements in res.items() %}
+                                            <tr>
+                                                <td class="c1">{{ elements['_id'] }}</td>
+                                                <td class="c2">{{ elements['Trajectory_ID'] }}</td>  
+                                            </tr>              
+                                    {% endfor %}
+                                </table>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="full">
+                    <div class="main_heading text_align_center">
+                        <div id="map">
+                        <script type="text/javascript" src="{{ url_for('static', filename='result_map.js') }}"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+           
+    </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
