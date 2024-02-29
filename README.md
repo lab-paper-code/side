@@ -14,9 +14,7 @@ TS-trie
 * [How to Use](#How-to-Use)
     * [Experiment input form](#experiment-input-form)
     * [Experiment process](#experiment-process)
-* [Sample Results](#Sample-Results)
-    * [Point query](#point-query-1)
-    * [Trajectory query](#trajectory-query-1)
+
 
 ## What is TS-trie
 
@@ -160,52 +158,3 @@ Now you can access the experimental web page.
 6. Press the search button to review the query results.
 
 
-## Sample Results
-### Point query
- * #### Spatiotemporal range query
-
-    <p align="center">
-    <img align="center" width="50%" src="figures/ST_input.png"></img>
-    </p>
-    <p align="center">
-    <img align="center" width="50%" src="figures/ST_result.png"></img>
-    </p>
-
-
- * #### k-NN query
-
-    <p align="center">
-    <img align="center" width="50%" src="figures/kNN_input.png"></img>
-    </p>
-    <p align="center">
-    <img align="center" width="50%" src="figures/kNN_result.png"></img>
-    </p>
-
- * #### Top-k query
-
-    <p align="center">
-    <img align="center" width="50%" src="figures/Top-k_input.png"></img>
-    </p>
-    <p align="center">
-    <img align="center" width="50%" src="figures/Top-k_result.png"></img>
-    </p>
-
-### Trajectory query
- * ####  Spatiotemporal range query
-
-    <p align="center">
-    <img align="center" width="50%" src="figures/ST_traj_input.png"></img>
-    </p>
-    <p align="center">
-    <img align="center" width="50%" src="figures/ST_traj_result.png"></img>
-    </p>
-
-
- * ####  k-Similarity query
-
-    <p align="center">
-    <img align="center" width="50%" src="figures/Similarity_traj_input.png"></img>
-    </p>
-    <p align="center">
-    <img align="center" width="50%" src="figures/Similarity_traj_result.png"></img>
-    </p>
