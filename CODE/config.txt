@@ -1,0 +1,7 @@
+ID = 
+PW = 
+Index_IP = 
+Web_IP = 
+MongoDB_IP = 
+DB_name = 
+Index_name = 
