@@ -119,7 +119,7 @@ Now you can access the experimental web page.
 ## How to Use
 
 ### Experiment input form
- - a time range with __two dates__, represented in the ISO 8601 standard format as `YYYY-MM-DD:hh:mm`
+ - a time range with __two dates__, represented in the ISO 8601 standard format as `YYYY-MM-DD:hh`
  - a rectangular spatial range with __two spatial points__ for spatialtemporal range query, indicating coordinates in terms of __latitude__ and __longitude__.
 
     example:
@@ -164,13 +164,21 @@ Now you can access the experimental web page.
 ### Point query
  * #### Spatiotemporal range query
 
-
+    <p align="center">
+    <img align="center" width="50%" src="figures/ST_input.png"></img>
+    </p>
 
  * #### k-NN query
 
+    <p align="center">
+    <img align="center" width="50%" src="figures/kNN_input.png"></img>
+    </p>
 
  * #### Top-k query
 
+    <p align="center">
+    <img align="center" width="50%" src="figures/Top-k_input.png"></img>
+    </p>
 
 ### Trajectory query
  * ####  Spatiotemporal range query
