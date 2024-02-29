@@ -117,7 +117,7 @@ Now you can access the experimental web page.
 ## How to Use
 
 ### Experiment input form
- - a time range with __two dates__, represented in the ISO 8601 standard format as `"YYYY-MM-DD:HH:MM:SS"`
+ - a time range with __two dates__, represented in the ISO 8601 standard format as `YYYY-MM-DD:hh:mm:ss`
  - a rectangular spatial range with __two spatial points__, indicating coordinates in terms of __latitude__ and __longitude__.
 
     example:
