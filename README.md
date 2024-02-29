@@ -37,10 +37,10 @@ It involves encoding a one-dimensional indexing key by using the time informatio
 * [Python 3.8.3]
 
 ### Public datasets
-  - T-Drive : https://www.microsoft.com/en-us/research/publication/t-drive-trajectory-data-sample/
-  - Chicago : https://data.cityofchicago.org/Transportation/Taxi-Trips-2013-2023-/wrvz-psew/about_data
-  - NYC-yellow : https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
-  - Porto : https://www.kaggle.com/c/pkdd-15-predict-taxi-service-trajectory-i/data
+  - T-Drive: https://www.microsoft.com/en-us/research/publication/t-drive-trajectory-data-sample/
+  - Chicago Taxi: https://data.cityofchicago.org/Transportation/Taxi-Trips-2013-2023-/wrvz-psew/about_data
+  - NYC-yellow Taxi: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+  - Porto Taxi: https://www.kaggle.com/c/pkdd-15-predict-taxi-service-trajectory-i/data
 
 
 ## Building from source
