@@ -71,9 +71,11 @@ After compiling, execute the generated `Index` file. This will start the server.
 
 Open a new terminal and move to the ST-Trie or TS-Trie directory under `SIDE/CODE/index`.
 
-Then compile the code below.
+Then compile the code below. 
 
     python3 app.py
+
+Now you can access the experimental web page.
 
 
 ## Main features
@@ -85,11 +87,11 @@ Then compile the code below.
 
  * #### k-NN query
 
-     - Retrieve k items in order of proximity from the given x, y coordinates while satisfying the spatiotemporal conditions
+     - Retrieve __k__ items in order of proximity from the given x, y coordinates while satisfying the spatiotemporal conditions
 
  * #### Top-k query
 
-     - Retrieve k items satisfying the given spatiotemporal conditions, selected from an arbitrary ordering criteria.
+     - Retrieve __k__ items satisfying the given spatiotemporal conditions, selected from an arbitrary ordering criteria.
      - In our experiments, we sorted in descending order based on latitude.
 
 
@@ -98,10 +100,9 @@ Then compile the code below.
 
      - Find all trajectories to which points satisfying the given spatiotemporal conditions.
 
- * ####  𝑘-Similarity query
+ * ####  k-Similarity query
 
-     - Identify a set of 𝑘 trajectories within a database that are most similar to a specific trajectory data
-
+     - Identify a set of __k__ trajectories within a database that are most similar to a specific trajectory data
 
 
 ## How to Use
@@ -117,29 +118,7 @@ Then compile the code below.
 (41.15255, -8.650274), (41.161985, -8.638086) #(latitude, longitude)
  ```
 
-### 1. Point query
-  #### 1) Spatiotemporal range query
 
-  - Find all spatiotemporal points satisfying the given spatiotemporal conditions.
-
-  #### 2)  k-NN query
-
-  - Retrieve k items in order of proximity from the given x, y coordinates while satisfying the spatiotemporal conditions
-
-  #### 3)  Top-k query
-
-  - Retrieve k items satisfying the given spatiotemporal conditions, selected from an arbitrary ordering criteria.
-  - In our experiments, we sorted in descending order based on latitude.
-
-
-### 2. Trajectory query
- #### 1) Spatiotemporal range query
-
-  - Find all trajectories to which points satisfying the given spatiotemporal conditions.
-
- #### 2) 𝑘-Similarity query
-
-  - Identify a set of 𝑘 trajectories within a database that are most similar to a specific trajectory data
 
 ___First___, choose the start and end dates under the time condition and switch the search type from ST to TS(ST means STC-index query and TS means TSC-index query).
 
