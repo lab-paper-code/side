@@ -4,7 +4,7 @@ TS-trie
 * [What is TS-trie](#What-is-TS-trie)
 * [Settings](#Settings)
     *  [Environments](#Environments)
-    *  [Utilized public datasets](#Utilized-public-datasets)
+    *  [Public datasets](#Public-datasets)
 * [Building from source](#Building-from-source)
     * [Build TS-trie indexing server](#build-ts-trie-indexing-server)
     * [Build front application server](#Buil-front-application-server)
@@ -12,6 +12,8 @@ TS-trie
     * [Point query](#Point-query)
     * [Trajectory query](#trajectory-query)
 * [How to Use](#How-to-Use)
+    * [Experiment input form](#experiment-input-form)
+    * [Experiment process](#experiment-process)
 * [Result Analysis](#Result-Analysis)
 
 ## What is TS-trie
@@ -34,7 +36,7 @@ It involves encoding a one-dimensional indexing key by using the time informatio
 * [S2Geometry 0.9.0.]
 * [Python 3.8.3]
 
-### Utilized public datasets
+### Public datasets
   - T-Drive : https://www.microsoft.com/en-us/research/publication/t-drive-trajectory-data-sample/
   - Chicago : https://data.cityofchicago.org/Transportation/Taxi-Trips-2013-2023-/wrvz-psew/about_data
   - NYC-yellow : https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
@@ -114,34 +116,50 @@ Now you can access the experimental web page.
 
 ## How to Use
 
-#### Input form
+### Experiment input form
  - a time range with __two dates__, represented in the ISO 8601 standard format as `"YYYY-MM-DD:HH:MM:SS"`
  - a rectangular spatial range with __two spatial points__, indicating coordinates in terms of __latitude__ and __longitude__.
 
- example:
- ```
-2013-07-01:09:00:00 ~ 2013-07-01:21:00:00
+    example:
+    ```
+    2013-07-01:09:00:00 ~ 2013-07-01:21:00:00
 
-(41.15255, -8.650274), (41.161985, -8.638086) #(latitude, longitude)
- ```
+    (41.15255, -8.650274), (41.161985, -8.638086) #(latitude, longitude)
+    ```
 
+### Experiment process
 
-First, place the cursor over the query format applied during compilation (__point__ or __trajectory__) at the top right corner of the webpage, and then choose a specific [query method.](#Main-features)
+1. Place the cursor over the query format applied during compilation (__point__ or __trajectory__) at the top right corner of the webpage, and then choose a specific [query method.](#Main-features)
 
-> **Warning**
-> If you drag too much on the map, it could an occur error on the server.
+2. Choose the start and end dates under the time condition and switch the search type from ST to __TS__(ST means STC-index query and TS means TSC-index query).
 
+3. Click on the rectangle shape on the map, then drag to set the spatial range as desired.
 
-___Second___, choose the start and end dates under the time condition and switch the search type from ST to TS(ST means STC-index query and TS means TSC-index query).
+    If you've incorrectly set the rectangle, select the trash can icon, click on the rectangles you want to delete, and press the save button next to the icon to remove them.
 
-
-___Afterward___, click on the rectangle shape on the map, then drag to set the spatial range as desired.
-
-If you've incorrectly set the rectangle, select the trash can icon, click on the rectangles you want to delete, and press the save button next to the icon to remove them.
-
+    > **Warning**
+    > If you drag too much on the map, it could an occur error on the server.
 
 
-___Lastly___, press the "Get Coordinates" button to confirm the input of coordinates, then press the search button to review the query results.
+4. press the "Get Coordinate range" button to confirm the input of coordinates, then press the search button to review the query results.
 
 
 ## Result Analysis
+### Point query
+ * #### Spatiotemporal range query
+
+
+
+ * #### k-NN query
+
+
+ * #### Top-k query
+
+
+### Trajectory query
+ * ####  Spatiotemporal range query
+
+
+
+ * ####  k-Similarity query
+
