@@ -167,11 +167,18 @@ Now you can access the experimental web page.
     <p align="center">
     <img align="center" width="50%" src="figures/ST_input.png"></img>
     </p>
+    <p align="center">
+    <img align="center" width="50%" src="figures/ST_result.png"></img>
+    </p>
+
 
  * #### k-NN query
 
     <p align="center">
     <img align="center" width="50%" src="figures/kNN_input.png"></img>
+    </p>
+    <p align="center">
+    <img align="center" width="50%" src="figures/kNN_result.png"></img>
     </p>
 
  * #### Top-k query
@@ -179,11 +186,26 @@ Now you can access the experimental web page.
     <p align="center">
     <img align="center" width="50%" src="figures/Top-k_input.png"></img>
     </p>
+    <p align="center">
+    <img align="center" width="50%" src="figures/Top-k_result.png"></img>
+    </p>
 
 ### Trajectory query
  * ####  Spatiotemporal range query
 
+    <p align="center">
+    <img align="center" width="50%" src="figures/ST_traj_input.png"></img>
+    </p>
+    <p align="center">
+    <img align="center" width="50%" src="figures/ST_traj_result.png"></img>
+    </p>
 
 
  * ####  k-Similarity query
 
+    <p align="center">
+    <img align="center" width="50%" src="figures/Similarity_traj_input.png"></img>
+    </p>
+    <p align="center">
+    <img align="center" width="50%" src="figures/Similarity_traj_result.png"></img>
+    </p>
