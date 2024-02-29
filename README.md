@@ -107,12 +107,14 @@ Then compile the code below.
 ## How to Use
 
 #### input
- - a time range with __two dates__, represented in the ISO 8601 standard format as `"YYYY-MM-DD"`
+ - a time range with __two dates__, represented in the ISO 8601 standard format as `"YYYY-MM-DD:HH:MM:SS"`
  - a rectangular spatial range with __two spatial points__, indicating coordinates in terms of __latitude__ and __longitude__.
 
  example:
  ```
- 
+2013-07-01:09:00:00 ~ 2013-07-01:21:00:00
+
+(41.15255, -8.650274), (41.161985, -8.638086)
  ```
 
 
