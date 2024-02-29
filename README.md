@@ -14,7 +14,7 @@ TS-trie
 * [How to Use](#How-to-Use)
     * [Experiment input form](#experiment-input-form)
     * [Experiment process](#experiment-process)
-* [Result Analysis](#Result-Analysis)
+* [Example Results](#Example-Results)
     * [Point query](#point-query-1)
     * [Trajectory query](#trajectory-query-1)
 
@@ -120,13 +120,21 @@ Now you can access the experimental web page.
 
 ### Experiment input form
  - a time range with __two dates__, represented in the ISO 8601 standard format as `YYYY-MM-DD:hh:mm`
- - a rectangular spatial range with __two spatial points__, indicating coordinates in terms of __latitude__ and __longitude__.
+ - a rectangular spatial range with __two spatial points__ for spatialtemporal range query, indicating coordinates in terms of __latitude__ and __longitude__.
 
     example:
     ```
     2013-07-01:09:00:00 ~ 2013-07-01:21:00:00
 
-    (41.15255, -8.650274), (41.161985, -8.638086) #(latitude, longitude)
+    (41.15255, -8.650274), (41.161985, -8.638086) #(latitude, longitude), (latitude, longitude)
+    ```
+ - a circular spatial range with __one spatial point__ for kNN, top-k query.
+
+    example:
+    ```
+    2013-07-01:09:00:00 ~ 2013-07-01:21:00:00
+
+    (41.15255, -8.650274), 1000 #(latitude, longitude), radius
     ```
 
 ### Experiment process
@@ -145,10 +153,14 @@ Now you can access the experimental web page.
     > If you drag too much on the map, it could an occur error on the server.
 
 
-5. press the "Get Coordinate range" button to confirm the input of coordinates, then press the search button to review the query results.
+5. Press the "Get Coordinate range" button to confirm the input of coordinates
+    
 
 
-## Result Analysis
+6. Press the search button to review the query results.
+
+
+## Example Results
 ### Point query
  * #### Spatiotemporal range query
 
