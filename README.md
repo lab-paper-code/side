@@ -5,15 +5,15 @@ TS-trie
 * [Settings](#Settings)
 * [Building from source](#Building-from-source)
 * [Main features](#Main-features)
-* [Examples](#Examples)
+* [How to Use](#How-to-Use)
 
 ## What is TS-trie
 
 <p align="center">
   <img align="center" width="50%" src="images/TS-Trie/TSC_ID.PNG"></img>
 </p>
-TS-trie is an trie-based indexing scheme that enables efficient spatio-temporal query by utilizing binary trie and single binary index data composed of spatial and temporal information. 
-It involves encoding a one-dimensional indexing key by using the time information as a prefix and connecting it with the spatial information. Furthermore, it offers high compression efficiency, effectively utilizing space, and reducing costs incurred during indexing management and maintenance processes. Currently TS-trie provides spatio-temporal indexing on top of the general NoSQL and capable of handling spatio-temporal range, k-NN, Top-k, and trajectory similarity query functionalities. 
+TS-trie is an trie-based indexing scheme that enables efficient spatiotemporal query by utilizing binary trie and single binary index data composed of spatial and temporal information. 
+It involves encoding a one-dimensional indexing key by using the time information as a prefix and connecting it with the spatial information. Furthermore, it offers high compression efficiency, effectively utilizing space, and reducing costs incurred during indexing management and maintenance processes. Currently TS-trie provides spatiotemporal indexing on top of the general NoSQL database and capable of handling spatiotemporal range, k-NN, Top-k, and trajectory similarity query functionalities. 
 
 
 ## Settings
@@ -24,8 +24,8 @@ It involves encoding a one-dimensional indexing key by using the time informatio
 * [C++17]
 * [GCC 7.5.0]
 * [MongoDB 6.0.4]
-* [S2Geometry version 0.9.0.]
-
+* [S2Geometry 0.9.0.]
+* [Python 3.8.3]
 
 ### Utilized public datasets
   - T-Drive : https://www.microsoft.com/en-us/research/publication/t-drive-trajectory-data-sample/
@@ -46,7 +46,7 @@ It involves encoding a one-dimensional indexing key by using the time informatio
 
 You can use __T-Drive__, __Chicago__, __NYC-yellow__, or __Porto__ for the DB_name,
 
-And for the Index_name, choose __TSC-index__ for point queries or __TSC-index_traj__ for trajectory queries.
+And for the Index_name, choose __TSC-index__ for the point query or __TSC-index_traj__ for the trajectory query.
 
 For example, if you want to check the Chicago dataset with point query, modify the config file as follows.
 
@@ -78,10 +78,10 @@ Then compile the code below.
 
 ## Main features
 
-### Point search
-  #### 1) Spatio-Temporal range query
+### Point query
+  #### 1) Spatiotemporal range query
 
-  - Find all spatio-temporal points satisfying the given spatiotemporal conditions.
+  - Find all spatiotemporal points satisfying the given spatiotemporal conditions.
 
   #### 2)  k-NN query
 
@@ -93,8 +93,8 @@ Then compile the code below.
   - In our experiments, we sorted in descending order based on latitude.
 
 
-### Trajectory search
- #### 1) Spatio-Temporal range query
+### Trajectory query
+ #### 1) Spatiotemporal range query
 
   - Find all trajectories to which points satisfying the given spatiotemporal conditions.
 
@@ -104,36 +104,26 @@ Then compile the code below.
 
 
 
-## Examples
+## How to Use
+
+#### input
+ - a time range with __two dates__, represented in the ISO 8601 standard format as `"YYYY-MM-DD"`
+ - a rectangular spatial range with __two spatial points__, indicating coordinates in terms of __latitude__ and __longitude__.
+
+ example:
+ ```
+ 
+ ```
 
 
-From the top of the webpage, the order is as follows: time conditions, a "Get Coordinates" button, a "Query search" button, "choose the search type", RECTANGLE shape, and then ST.
-
-<p align="center">
-  <img align="center" width="50%" src="images/TS-Trie/TS-trie_capture1.png" height="30%" width="30%"></img>
-</p>
-
-<p align="center">
-  <img align="center" width="50%" src="images/TS-Trie/TS-trie_capture2.png" height="30%" width="30%"></img>
-</p>
 
 ___First___, choose the start and end dates under the time condition and switch the search type from ST to TS(ST means STC-index query and TS means TSC-index query).
-<p align="center">
-  <img align="center" width="50%" src="images/TS-Trie/TS-trie_capture3.png" height="30%" width="30%"></img>
-</p>
+
 
 ___Afterward___, click on the rectangle shape on the map, then drag to set the spatial range as desired.
 
 If you've incorrectly set the rectangle, select the trash can icon, click on the rectangles you want to delete, and press the save button next to the icon to remove them.
-<p align="center">
-  <img align="center" width="50%" src="images/TS-Trie/TS-trie_capture4.png" height="30%" width="30%"></img>
-</p>
 
-<p align="center">
-  <img align="center" width="50%" src="images/TS-Trie/TS-trie_capture5.png"></img>
-</p>
-<p align="center">
-  <img align="center" width="50%" src="images/TS-Trie/TS-trie_capture6.png"></img>
-</p>
+
 
 ___Lastly___, press the "Get Coordinates" button to confirm the input of coordinates, then press the search button to review the query results.
