@@ -1,1 +1,138 @@
-# side
+TS-trie
+=============
+* [What is TS-trie](#What-is-TS-trie)
+* [Settings](#Settings)
+* [Building from source](#Building-from-source)
+* [Main features](#Main-features)
+* [Examples](#Examples)
+
+## What is TS-trie
+
+<p align="center">
+  <img align="center" width="50%" src="images/TS-Trie/TSC_ID.PNG"></img>
+</p>
+TS-trie is an trie-based indexing scheme that enables efficient spatio-temporal query by utilizing binary trie and single binary index data composed of spatial and temporal information. 
+It involves encoding a one-dimensional indexing key by using the time information as a prefix and connecting it with the spatial information. Furthermore, it offers high compression efficiency, effectively utilizing space, and reducing costs incurred during indexing management and maintenance processes. Currently TS-trie provides spatio-temporal indexing on top of the general NoSQL and capable of handling spatio-temporal range, k-NN, Top-k, and trajectory similarity query functionalities. 
+
+
+## Settings
+
+### Environments
+
+* [Ubuntu 20.04 LTS]
+* [C++17]
+* [GCC 7.5.0]
+* [MongoDB 6.0.4]
+* [S2Geometry version 0.9.0.]
+
+
+### Utilized public datasets
+  - T-Drive : https://www.microsoft.com/en-us/research/publication/t-drive-trajectory-data-sample/
+  - Chicago : https://data.cityofchicago.org/Transportation/Taxi-Trips-2013-2023-/wrvz-psew/about_data
+  - NYC-yellow : https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+  - Porto : https://www.kaggle.com/c/pkdd-15-predict-taxi-service-trajectory-i/data
+
+
+## Building from source
+
+
+### Build TS-trie indexing server
+
+ Before initiating the compilation process, you need to choose the desired dataset and index format in the location marked with *** in `config.txt` located at `index/TS-trie/`.
+
+    DB_name = SIDE-***
+    Index_name = ***
+
+You can use __T-Drive__, __Chicago__, __NYC-yellow__, or __Porto__ for the DB_name,
+
+And for the Index_name, choose __TSC-index__ for point queries or __TSC-index_traj__ for trajectory queries.
+
+For example, if you want to check the Chicago dataset with point query, modify the config file as follows.
+
+    DB_name = SIDE-Chicago
+    Index_name = TSC-index
+
+
+
+
+Move to `SIDE/CODE/index` and then compile the code below.
+
+```
+sudo g++ --std=c++14 BinaryTrie.h iot_time.h iot_time.cpp cover.h cover.cpp iot_func.h iot_func.cpp ConfigParser.h ConfigParser.cpp main.cpp -o Index $(pkg-config --cflags --libs libmongocxx) -ls2 -lboost_system -lcrypto -lssl -lcpprest -O2 -Wall -lm -m64 -lpthread
+```
+
+After compiling, execute the generated `Index` file. This will start the server.
+
+    ./Index
+
+
+### Build front application server
+
+Open a new terminal and move to the ST-Trie or TS-Trie directory under `SIDE/CODE/index`.
+
+Then compile the code below.
+
+    python3 app.py
+
+
+## Main features
+
+### Point search
+  #### 1) Spatio-Temporal range query
+
+  - Find all spatio-temporal points satisfying the given spatiotemporal conditions.
+
+  #### 2)  k-NN query
+
+  - Retrieve k items in order of proximity from the given x, y coordinates while satisfying the spatiotemporal conditions
+
+  #### 3)  Top-k query
+
+  - Retrieve k items satisfying the given spatiotemporal conditions, selected from an arbitrary ordering criteria.
+  - In our experiments, we sorted in descending order based on latitude.
+
+
+### Trajectory search
+ #### 1) Spatio-Temporal range query
+
+  - Find all trajectories to which points satisfying the given spatiotemporal conditions.
+
+ #### 2) 𝑘-Similarity query
+
+  - Identify a set of 𝑘 trajectories within a database that are most similar to a specific trajectory data
+
+
+
+## Examples
+
+
+From the top of the webpage, the order is as follows: time conditions, a "Get Coordinates" button, a "Query search" button, "choose the search type", RECTANGLE shape, and then ST.
+
+<p align="center">
+  <img align="center" width="50%" src="images/TS-Trie/TS-trie_capture1.png" height="30%" width="30%"></img>
+</p>
+
+<p align="center">
+  <img align="center" width="50%" src="images/TS-Trie/TS-trie_capture2.png" height="30%" width="30%"></img>
+</p>
+
+___First___, choose the start and end dates under the time condition and switch the search type from ST to TS(ST means STC-index query and TS means TSC-index query).
+<p align="center">
+  <img align="center" width="50%" src="images/TS-Trie/TS-trie_capture3.png" height="30%" width="30%"></img>
+</p>
+
+___Afterward___, click on the rectangle shape on the map, then drag to set the spatial range as desired.
+
+If you've incorrectly set the rectangle, select the trash can icon, click on the rectangles you want to delete, and press the save button next to the icon to remove them.
+<p align="center">
+  <img align="center" width="50%" src="images/TS-Trie/TS-trie_capture4.png" height="30%" width="30%"></img>
+</p>
+
+<p align="center">
+  <img align="center" width="50%" src="images/TS-Trie/TS-trie_capture5.png"></img>
+</p>
+<p align="center">
+  <img align="center" width="50%" src="images/TS-Trie/TS-trie_capture6.png"></img>
+</p>
+
+___Lastly___, press the "Get Coordinates" button to confirm the input of coordinates, then press the search button to review the query results.
