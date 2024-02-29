@@ -15,6 +15,8 @@ TS-trie
     * [Experiment input form](#experiment-input-form)
     * [Experiment process](#experiment-process)
 * [Result Analysis](#Result-Analysis)
+    * [Point query](#point-query-1)
+    * [Trajectory query](#trajectory-query-1)
 
 ## What is TS-trie
 
