@@ -27,7 +27,8 @@ def index():
 @app.route('/search/range', methods=['GET', 'POST'])
 def range_query():
     current_directory = os.path.dirname(os.path.realpath(__file__))
-    conf_path = "/home/air7/SIDE/yjooy/CODE/index/config.txt"
+    conf_path = "index/config.txt"
+    current_directory = current_directory.replace("Web", conf_path)
     search_string = 'DB_name ='
 
     with open(conf_path, 'r', encoding='utf-8') as file:
@@ -42,7 +43,9 @@ def range_query():
 
 @app.route('/search/knn', methods=['GET', 'POST'])
 def knn_query():
-    conf_path = "/home/air7/SIDE/yjooy/CODE/index/config.txt"
+    current_directory = os.path.dirname(os.path.realpath(__file__))
+    conf_path = "index/config.txt"
+    current_directory = current_directory.replace("Web", conf_path)
     search_string = 'DB_name ='
 
     with open(conf_path, 'r', encoding='utf-8') as file:
@@ -58,7 +61,9 @@ def knn_query():
 
 @app.route('/search/topk', methods=['GET', 'POST'])
 def topk_query():
-    conf_path = "/home/air7/SIDE/yjooy/CODE/index/config.txt"
+    current_directory = os.path.dirname(os.path.realpath(__file__))
+    conf_path = "index/config.txt"
+    current_directory = current_directory.replace("Web", conf_path)
     search_string = 'DB_name ='
 
     with open(conf_path, 'r', encoding='utf-8') as file:
@@ -75,7 +80,9 @@ def topk_query():
 @app.route('/search/trajectory')
 @app.route('/search/trajectory/range', methods=['GET','POST'])
 def traj_range_query():
-    conf_path = "/home/air7/SIDE/yjooy/CODE/index/config.txt"
+    current_directory = os.path.dirname(os.path.realpath(__file__))
+    conf_path = "index/config.txt"
+    current_directory = current_directory.replace("Web", conf_path)
     search_string = 'DB_name ='
 
     with open(conf_path, 'r', encoding='utf-8') as file:
@@ -90,7 +97,9 @@ def traj_range_query():
 
 @app.route('/search/trajectory/similarity', methods=['GET','POST'])
 def traj_similarity_query():
-    conf_path = "/home/air7/SIDE/yjooy/CODE/index/config.txt"
+    current_directory = os.path.dirname(os.path.realpath(__file__))
+    conf_path = "index/config.txt"
+    current_directory = current_directory.replace("Web", conf_path)
     search_string = 'DB_name ='
 
     with open(conf_path, 'r', encoding='utf-8') as file:
