@@ -22,7 +22,7 @@ TS-trie
   <img align="center" width="50%" src="figures/TS-Trie_structure.jpg"></img>
 </p>
 TS-trie is an trie-based indexing scheme that enables efficient spatiotemporal query by utilizing binary trie and single binary index data composed of spatial and temporal information. 
-It involves encoding a one-dimensional indexing key by using the time information as a prefix and connecting it with the spatial information. Furthermore, it offers high compression efficiency, effectively utilizing space, and reducing costs incurred during indexing management and maintenance processes. Currently TS-trie provides spatiotemporal indexing on top of the general NoSQL database and capable of handling spatiotemporal range, k-NN, Top-k, and trajectory similarity query functionalities. 
+It involves encoding a one-dimensional indexing key by using the time information as a prefix and connecting it with the spatial information. Furthermore, it offers high compression efficiency, effectively utilizing space, and reducing costs incurred during indexing management and maintenance processes. Currently TS-trie provides spatiotemporal indexing on top of the general NoSQL database and capable of handling spatiotemporal range, k-NN, and trajectory similarity query functionalities. 
 
 
 ## Settings
@@ -121,7 +121,7 @@ Now you can access the experimental web page.
 
     (41.15255, -8.650274), (41.161985, -8.638086) #(latitude, longitude), (latitude, longitude)
     ```
- - a circular spatial range with __one spatial point__ for kNN, top-k query.
+ - a circular spatial range with __one spatial point__ for kNN query.
 
     example:
     ```
