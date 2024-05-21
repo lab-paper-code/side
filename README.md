@@ -98,11 +98,6 @@ Now you can access the experimental web page.
 
      - Retrieve __k__ points in order of proximity from the given x, y coordinates while satisfying the spatiotemporal conditions
 
- * #### Top-k query
-
-     - Retrieve __k__ points satisfying the given spatiotemporal conditions, selected from an arbitrary ordering criteria.
-     - In our experiments, we sorted in descending order based on latitude.
-
 
 ### Trajectory query
  * ####  Spatiotemporal range query
